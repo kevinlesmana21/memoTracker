@@ -1,0 +1,139 @@
+#tableWrapper {
+    width: 100vw;
+    overflow-x: scroll;
+    margin: 30px 30px;
+}
+
+#tableWrapper::-webkit-scrollbar {
+    /* width: 0; */
+    display: none;
+}
+
+th{
+    text-align: center;
+    padding: 10px 10px;
+    border: 1pt solid grey;
+}
+
+.mytables{
+    border-collapse: collapse;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+#upordel{
+    text-decoration: none;
+    color: grey;
+}
+
+#upordel:hover{
+    color:black;
+}
+
+#del{
+    text-decoration: none;
+    color: grey;
+}
+
+#del:hover{
+    color:black;
+}
+
+.deleteAlert{
+    background: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px 30px;
+    display:none;
+    position: fixed;
+    right: 40%;
+    align-items: center;
+}
+
+#deleteAlertBox{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#alert-title{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#btnBox{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#btnYes{
+    /* background-color: lime; */
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+#btnNo{
+    /* background-color: red; */
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.alert-text{
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+#btn-background-size-yes{
+    width: 68px;
+    background-color: lime;
+    margin-left: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#btn-background-size-no{
+    width: 68px;
+    background-color: red;
+    margin-right: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.pagination{
+    display: flex;
+    position: absolute;
+    padding: 10px;
+    padding-right: 0px;
+    margin-bottom: 50px;
+}
+
+.pagination p{
+    margin: 10px;
+}
+
+.pagination a{
+    border: solid 1px #bababa;
+    padding: 8px 16px;
+    text-decoration: none;
+    color:black;
+}
+
+.pagination a:hover{
+    background-color: rgb(127, 227, 245);
+    
+}
+
+.pagination span{
+    font-weight: bold;
+}
+
