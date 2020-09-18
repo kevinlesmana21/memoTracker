@@ -1,8 +1,8 @@
 @extends('layouts/index')
 
 @section('design')
-    <link rel="stylesheet" href="{{asset('assets/css/edit.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/edit.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/index.css')}}">
 @endsection
 
 @section('content')

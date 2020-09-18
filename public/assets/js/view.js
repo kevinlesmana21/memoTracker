@@ -9,9 +9,10 @@ window.addEventListener('load', function() {
   //   });
   // })
   document.querySelector('#body').addEventListener('click', function(e) {
+    console.log(e.target.nodeName)
     if (e.target.nodeName === 'A') {
-      e.preventDefault();
       if (e.target.classList.contains('del')) {
+        e.preventDefault();
         let route = e.target.getAttribute('href')
         document.getElementById('alert').style.display = 'block';
         document.querySelector(`#btnYes`).setAttribute('href', route);

@@ -3,9 +3,9 @@
 @section('design')
     <link rel="stylesheet" href="assets/css/view.css">
     {{-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> --}}
-    <script type="text/javascript" src="assets/js/pagination.class.js"></script>
-    <script type="text/javascript" src="assets/js/script.js" defer></script>
-    <script type="text/javascript" src="assets/js/view.js"></script>
+    <script type="text/javascript" src="/assets/js/pagination.class.js"></script>
+    <script type="text/javascript" src="/assets/js/script.js" defer></script>
+    <script type="text/javascript" src="/assets/js/view.js"></script>
 @endsection
 
 @section('content')
@@ -106,14 +106,14 @@
                 <th>{{$memo->history_invinst}}</th>
                 <th>{{$memo->start_maintenance}}</th>
                 <th>{{$memo->end_maintenance}}</th>
-                <th><a class="delete" id="upordel" href="/edit/{{$memo->no}}">UPDATE </a><a id="upordel" class="del" href="/delete/{{$memo->no}}">DELETE</a></th>
+                <th><a id="upordel" href="/edit/{{$memo->no}}">UPDATE </a><a id="upordel" class="del" href="/delete/{{$memo->no}}">DELETE</a></th>
             </tr>
         @endforeach
         </tbody>
     </table>
     <div id="pagination" class="pagination">
         <p class="pagination-label">
-            Viewing <span>1-10</span> of <span>36</span>
+            {{-- Viewing <span>1-10</span> of <span>36</span> --}}
         </p>
         <a href="#" class="previous round">&#8249;</a>
         <a href="#" class="next round">&#8250;</a>

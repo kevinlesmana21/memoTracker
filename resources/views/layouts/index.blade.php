@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
     @yield('design')
     <title>Document</title>
 </head>
@@ -31,6 +31,6 @@
     
         @yield('content')
     </div>
-    <script src="assets/js/index.js"></script>
+    <script src={{asset("assets/js/index.js")}}></script>
 </body>
 </html>
