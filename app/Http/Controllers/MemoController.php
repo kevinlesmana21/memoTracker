@@ -6,27 +6,29 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Memos;
+use \Carbon\Carbon;
+use Session;
 
 class MemoController extends Controller
 {
+
+    public function index(){
+        $new = Memos::whereDate('created_at', Carbon::today())->count();
+        $open = Memos::whereNotNull('tgl_rfq')
+                ->whereNull('end_maintenance')
+                ->count();
+        $finish = Memos::whereNotNull('end_maintenance')->count();
+        $all = Memos::count();
+        return view('index', compact('new','open','finish','all'));
+    }
+
     public function view(){
-        $memos = DB::table('memos')->get();
-        // // $pages[] = new array();
-        // $counter = 0;
-
-        // for ($i=0; $i < count($memos); $i++) { 
-        //     if ($countercount < 10) {
-        //         array_push($pages[$counter], $memos[i]);
-        //     } else {
-        //         $counter = 0;
-        //     }
-        // }
-
-        return view('pages/view', compact('memos'));
+        $memos = Memos::get();
+        return view('view', compact('memos'));
     }
 
     public function create(){
-        return view('pages/create');
+        return view('create');
     }
 
     public function store(Request $request){
@@ -69,18 +71,19 @@ class MemoController extends Controller
         $memos->end_maintenance = $request->input('end_maintenance');
 
         $memos->save();
+        Session::flash('green','Create Success!');
         return redirect()->route('view');
     }
 
     public function edit($no){
         $memo = Memos::findOrFail($no);
-        return view('pages/edit', compact('memo'));
+        return view('edit', compact('memo'));
     }
 
     public function delete($no){
         $memos = Memos::findOrFail($no);
         $memos->delete();
-
+        Session::flash('red','Delete Success!');
         return redirect()->route('view');
     }
 
@@ -124,6 +127,7 @@ class MemoController extends Controller
         $memos->end_maintenance = $request->input('end_maintenance');
 
         $memos->save();
+        Session::flash('blue','Update Success!');
         return redirect()->route('view');
     }
 

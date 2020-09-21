@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts/index');
-});
-
+Route::get('/', 'MemoController@index');
 Route::get('/view', 'MemoController@view')->name('view');
 Route::get('/create', 'MemoController@create');
 Route::post('/view', 'MemoController@store');
