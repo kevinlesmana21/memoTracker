@@ -1,1 +1,0 @@
-var pagination = new Pagination({id:'pagination', tableID:'datatable', noOfRows:10});
